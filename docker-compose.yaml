@@ -1,0 +1,32 @@
+version: "3.4"
+services:
+  mongodb:
+    image: mongo:6.0.3
+    command: "--nojournal"
+    ports:
+      - "27017:27017"
+    # environment:`
+    # <<: *mongodb
+    volumes:
+      - mongodb_vol:/data/db
+    logging:
+      options:
+        max-size: 50m
+
+  minio:
+    image: 'bitnami/minio:latest'
+    container_name: minio
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio123
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - data3-1:/data1
+      - data3-2:/data2
+
+volumes:
+  mongodb_vol:
+  data3-1:
+  data3-2:
