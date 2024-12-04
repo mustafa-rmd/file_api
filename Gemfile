@@ -17,7 +17,7 @@ gem "jwt"
 
 gem "bcrypt", "~> 3.1.7"
 
-gem "aws-sdk-s3", "~> 1.0"  # Use the latest version if available
+gem "aws-sdk-s3", "~> 1.176"  # Use the latest version if available
 
 gem "mime-types", "~> 3.3"
 
